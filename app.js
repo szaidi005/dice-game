@@ -48,5 +48,22 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
   }
 });
 
+document.querySelector(".btn-hold").addEventListener("click", function () {
+  // Add CURRENT score to GLOBAL score
+  scores[activePlayer] += roundScore;
+
+  // Update the UI
+  document.querySelector("#score-" + activePlayer).textContent =
+    scores[activePlayer];
+  activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+  //Check fi player won the game
+
+  // var score = "score-" + activePlayer;
+  // var totalScore = 0;
+  // console.log(typeof(totalScore += roundScore));
+  // console.log(totalScore);
+  // document.getElementById(score).textContent = totalScore
+});
+
 // document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>'
 //var x = document.querySelector("#score-0").textContent;
